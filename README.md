@@ -10,18 +10,17 @@ Updated: 2020/02/04
 2. Azure Web App を Azure にプロビジョ二ング
 3. Azure DevOps のプロジェクトを作成
 4. Azure Pipelines にビルドパイプラインを作成
-5. Azure Pipelines にリリースパイプラインを追加
-6. Azure Pipelines 経由で App Service の運用環境にアプリケーションをデプロイ
-7. Azure Pipelines のリリースパイプラインに Staging 環境へのデプロイプロセスを追加
-8. Azure Web App に Staging スロットを追加
-9. Azure Repository からコードを変更し、コミットをトリガーに CI/CD が走り出すことを確認
-10. Azure Web App の機能で遊ぶ
+5. Azure Pipelines にリリースパイプラインを追加し、基本的な CI/CD を実現する
+6. Azure Pipelines のリリースパイプラインに Staging 環境へのデプロイプロセスを追加
+7. Azure Repository からコードを変更し、コミットをトリガーに CI/CD が走り出すことを確認
+8. Azure Web App の機能で遊ぶ
 
 
 ## 概要
 # TBD
 
-----
+---
+
 ## 1. 準備
 
 #### 用意するもの
@@ -35,6 +34,7 @@ https://portal.azure.com
 - Azure DevOps
 https://dev.azure.com/
 
+---
 
 ## 2. Azure Web App を Azure にプロビジョ二ング
 
@@ -89,6 +89,7 @@ Application Insights とは開発者や DevOps プロフェッショナル向け
   https://docs.microsoft.com/ja-jp/azure/azure-monitor/app/app-insights-overview
 
 
+---
 
 ## 3. Azure DevOps のプロジェクトを作成
 
@@ -101,38 +102,23 @@ Application Insights とは開発者や DevOps プロフェッショナル向け
 1. プロジェクトを作成する画面に映りますので、最初のプロジェクトを作成しましょう。プロジェクト名は任意です。
 プロジェクトは Private か Public を選ぶことができます。
 ![](./Screenshots/4.png)
-1. プロジェクトができたらクリックしてプロジェクトページにいきます。
+1. プロジェクトができたらクリックしてプロジェクトページにアクセスします。
 ![](./Screenshots/9.png)
-1. 組織を
 ![](./Screenshots/10.png)
 
 **既存の組織がある場合**
 1. もし既存の組織がある、また以前に Azure DevOps を使っていた場合は、ログイン後そのまま該当の組織において新しいプロジェクトを作ります。
-新しく組織を作る場合は New Organization から新しい組織を作ります。
+また、新しく組織を作る場合は New Organization から新しい組織を作ります。
 ![](./Screenshots/5.png)
-1. Continue で先に進んでいき、必要事項を記入します。
+1. Continue で先に進み必要事項を記入します。
 ![](./Screenshots/7.png)
 1. 組織名を入力する必要がありますが、この値はユニーク値にする必要があります。
 ![](./Screenshots/8.png)
 
 
 
+---
 ## 4. Azure Pipelines にビルドパイプラインを作成
-
-## 5. Azure Pipelines にリリースパイプラインを追加
-
-## 6. Azure Pipelines 経由で App Service の運用環境にアプリケーションをデプロイ
-
-## 7. Azure Pipelines のリリースパイプラインに Staging 環境へのデプロイプロセスを追加
-
-## 8. Azure Web App に Staging スロットを追加
-
-## 9. Azure Repository からコードを変更し、コミットをトリガーに CI/CD が走り出すことを確認
-
-## 10. Azure Web App の機能で遊ぶ
-
-
-
 ![](./Screenshots/11.png)
 ![](./Screenshots/12.png)
 ![](./Screenshots/13.png)
@@ -149,6 +135,10 @@ Application Insights とは開発者や DevOps プロフェッショナル向け
 ![](./Screenshots/24.png)
 ![](./Screenshots/25.png)
 ![](./Screenshots/26.png)
+
+---
+## 5. Azure Pipelines にリリースパイプラインを追加し、基本的な CI/CD を実現する
+
 ![](./Screenshots/27.png)
 ![](./Screenshots/28.png)
 ![](./Screenshots/29.png)
@@ -168,6 +158,11 @@ Application Insights とは開発者や DevOps プロフェッショナル向け
 ![](./Screenshots/43.png)
 ![](./Screenshots/44.png)
 ![](./Screenshots/45.png)
+
+
+---
+## 6. Azure Pipelines のリリースパイプラインに Staging 環境へのデプロイプロセスを追加
+
 ![](./Screenshots/46.png)
 ![](./Screenshots/47.png)
 ![](./Screenshots/48.png)
@@ -186,4 +181,27 @@ Application Insights とは開発者や DevOps プロフェッショナル向け
 ![](./Screenshots/61.png)
 ![](./Screenshots/62.png)
 ![](./Screenshots/63.png)
+
+
+---
+## 7. Azure Repository からコードを変更し、コミットをトリガーに CI/CD が走り出すことを確認
 ![](./Screenshots/64.png)
+![](./Screenshots/65.png)
+![](./Screenshots/66.png)
+![](./Screenshots/67.png)
+![](./Screenshots/68.png)
+![](./Screenshots/69.png)
+![](./Screenshots/70.png)
+![](./Screenshots/71.png)
+![](./Screenshots/72.png)
+
+---
+## 8. Azure Web App の機能で遊ぶ
+
+![](./Screenshots/73.png)
+![](./Screenshots/74.png)
+![](./Screenshots/75.png)
+![](./Screenshots/76.png)
+![](./Screenshots/77.png)
+![](./Screenshots/78.png)
+![](./Screenshots/79.png)
