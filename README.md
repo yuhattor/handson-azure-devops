@@ -38,8 +38,7 @@ https://dev.azure.com/
 
 ## 2. Azure Web App を Azure にプロビジョ二ング
 
-
-#### 手順
+### 手順
 
 1. Azure Portal (https://portal.azure.com) にアクセスします。
 ![](./Screenshots/1-1.png)
@@ -73,12 +72,15 @@ Application Insights とは開発者や DevOps プロフェッショナル向け
 1. Web App の初期画面 が表示されたことを確認します。
 ![](./Screenshots/1-16.png)
 
-#### この章で作ったもの
+### この章で作ったもの
 # TBD
 
-#### 備考/参考URL
+### 備考/参考URL
 - App Service / Web App とは？
   https://azure.microsoft.com/ja-jp/services/app-service/web/
+
+- Resource Group とは
+  https://tech-blog.cloud-config.jp/2019-06-06-evening-azure-challenge-002/
 
 - App Service と App Service Plan の違いって？
   https://www.cloudou.net/app-service/app001/
@@ -86,41 +88,51 @@ Application Insights とは開発者や DevOps プロフェッショナル向け
 - Application Insights とは？
   https://docs.microsoft.com/ja-jp/azure/azure-monitor/app/app-insights-overview
 
-  > Application Insights は Azure Monitor の機能であり、開発者や DevOps プロフェッショナル向けの拡張可能なアプリケーション パフォーマンス管理 (APM) サービスです。 このサービスを使用して、実行中のアプリケーションを監視することができます。 パフォーマンスの異常を自動的に検出し、組み込まれている強力な分析ツールを使用して、問題を診断し、ユーザーがアプリを使用して実行している操作を把握できます。 Application Insights は、パフォーマンスやユーザビリティを継続的に向上させるうえで役立つように設計されています。 オンプレミス、ハイブリッド、または任意のパブリック クラウドでホストされている .NET、Node.js、Java EE などのさまざまなプラットフォーム上のアプリで機能します。 DevOps プロセスと統合され、さまざまなツールへの接続ポイントを備えています。 Visual Studio App Center と統合することで、モバイル アプリからテレメトリを監視および分析できます。
-- リソースグループとは
-  https://tech-blog.cloud-config.jp/2019-06-06-evening-azure-challenge-002/
-
-
 
 
 ## 3. Azure DevOps のプロジェクトを作成
-4. Azure Pipelines にビルドパイプラインを作成
-5. Azure Pipelines にリリースパイプラインを追加
-6. Azure Pipelines 経由で App Service の運用環境にアプリケーションをデプロイ
-7. Azure Pipelines のリリースパイプラインに Staging 環境へのデプロイプロセスを追加
-8. Azure Web App に Staging スロットを追加
-9. Azure Repository からコードを変更し、コミットをトリガーに CI/CD が走り出すことを確認
-10. Azure Web App の機能で遊ぶ
-
-
-
-## 2. Azure DevOps にパイプラインを構築
-
-#### Azure DevOps に Organization を作成します。 (既にある場合はスキップ可能です。)
 
 1. Azure DevOps のページにログインします (https://dev.azure.com)
-
-
 ![](./Screenshots/1.png)
+1. 初回ログインの際には名前を入力する必要があります。
 ![](./Screenshots/2.png)
+1. Continue で初回登録を完了します。すると、初期 Organization が設定されます。
 ![](./Screenshots/3.png)
+1. プロジェクトを作成する画面に映りますので、最初のプロジェクトを作成しましょう。プロジェクト名は任意です。
+プロジェクトは Private か Public を選ぶことができます。
 ![](./Screenshots/4.png)
-![](./Screenshots/5.png)
-![](./Screenshots/6.png)
-![](./Screenshots/7.png)
-![](./Screenshots/8.png)
+1. プロジェクトができたらクリックしてプロジェクトページにいきます。
 ![](./Screenshots/9.png)
+1. 組織を
 ![](./Screenshots/10.png)
+
+**既存の組織がある場合**
+1. もし既存の組織がある、また以前に Azure DevOps を使っていた場合は、ログイン後そのまま該当の組織において新しいプロジェクトを作ります。
+新しく組織を作る場合は New Organization から新しい組織を作ります。
+![](./Screenshots/5.png)
+1. Continue で先に進んでいき、必要事項を記入します。
+![](./Screenshots/7.png)
+1. 組織名を入力する必要がありますが、この値はユニーク値にする必要があります。
+![](./Screenshots/8.png)
+
+
+
+## 4. Azure Pipelines にビルドパイプラインを作成
+
+## 5. Azure Pipelines にリリースパイプラインを追加
+
+## 6. Azure Pipelines 経由で App Service の運用環境にアプリケーションをデプロイ
+
+## 7. Azure Pipelines のリリースパイプラインに Staging 環境へのデプロイプロセスを追加
+
+## 8. Azure Web App に Staging スロットを追加
+
+## 9. Azure Repository からコードを変更し、コミットをトリガーに CI/CD が走り出すことを確認
+
+## 10. Azure Web App の機能で遊ぶ
+
+
+
 ![](./Screenshots/11.png)
 ![](./Screenshots/12.png)
 ![](./Screenshots/13.png)
