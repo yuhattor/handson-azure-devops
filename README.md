@@ -7,9 +7,15 @@ Updated: 2020/02/04
 ## 目次
 
 1. 準備
-1. Azure DevOps にパイプラインを構築
-1. Azure Web App にアプリケーションをデプロイ
-1. Azure Web App に Staging スロットを作成
+1. Azure Web App を Azure にプロビジョン
+1. Azure DevOps のプロジェクトを作成
+1. Azure Pipelines にビルドパイプラインを作成
+1. Azure Pipelines にリリースパイプラインを追加
+1. Azure Pipelines 経由で App Service の運用環境にアプリケーションをデプロイ
+1. Azure Pipelines のリリースパイプラインに Staging 環境へのデプロイプロセスを追加
+1. Azure Web App に Staging スロットを追加
+1. Azure Repository からコードを変更し、コミットをトリガーに CI/CD が走り出すことを確認
+1. Azure Web App の機能をためす。
  
 
 ----
@@ -37,4 +43,19 @@ https://dev.azure.com/
 1. Azure DevOps のページにログインします (https://dev.azure.com)
 
 
-![](Screenshots/Screen Shot 2020-02-04 at 3.06.23 PM.png)
+![](./Screenshots/1-1.png)
+![](./Screenshots/1-2.png)
+![](./Screenshots/1-3.png)
+![](./Screenshots/1-4.png)
+![](./Screenshots/1-5.png)
+![](./Screenshots/1-6.png)
+![](./Screenshots/1-7.png)
+![](./Screenshots/1-8.png)
+![](./Screenshots/1-9.png)
+![](./Screenshots/1-10.png)
+![](./Screenshots/1-11.png)
+![](./Screenshots/1-12.png)
+![](./Screenshots/1-13.png)
+![](./Screenshots/1-14.png)
+![](./Screenshots/1-15.png)
+![](./Screenshots/1-16.png)
