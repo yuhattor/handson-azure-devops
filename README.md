@@ -280,27 +280,53 @@ Pre-deployment approval のトグルをオンにし、 Approvers にユーザー
 ![](./Screenshots/63.png)
 
 
-
-
 ---
 ## 7. Azure Repository からコードを変更し、コミットをトリガーに CI/CD が走り出すことを確認
+これで、全ての処理が完了しました。それでは全体の CI/CD パイプラインが正しく動くか確認します。　
+
+1. Build パイプラインを起動するため、Azure Repos の簡易エディタを使い、ファイルに変更を加え変更をコミットします。
 ![](./Screenshots/64.png)
+
+1. わかりやすい任意のファイルを変更します。この例では Source > Tailwind.Traders.Web > ClientApp > src > assets > locales > translation.json を変更しています。
 ![](./Screenshots/65.png)
+
+1. 変更したら master ブランチにコミットします。
 ![](./Screenshots/66.png)
+
+1. コミットしたら、Build パイプラインの画面で、パイプラインが動き出したか確認します。
 ![](./Screenshots/67.png)
+
+1. Build パイプラインが終わったら、Release パイプラインが起動したか確認し、staging に無事アプリケーションがリリースされたことを確認します。同時に prod にはデプロイされていないことを確認します。
 ![](./Screenshots/68.png)
+
+1. prod 環境には変更が加わっておらず、 staging 環境には変更が加わったことを確認します。　
 ![](./Screenshots/69.png)
 ![](./Screenshots/70.png)
-![](./Screenshots/71.png)
-![](./Screenshots/72.png)
 
 ---
 ## 8. Azure Web App の機能で遊ぶ
+この段階では、staging 環境には新しいアプリケーションがデプロイされ、prod には古い環境がデプロイされたままになっている状態になっています。
+このタイミングでスロットの他の機能を試します。
 
+1. ABtest / Test in Production
+App Service の prod 環境の画面に戻り、スロットごとの トラフィック % を設定します。 これにより、abtest / Test in production の環境を実現することができます。
+このハンズのではそれぞれ の割合を 50% に設定し、prod 環境の url にきたレスポンスがそれぞれ半分ずつ 2つのスロット(今回の場合 prod とstagin) に分散される設定にします。
+AB test の実現で、プロダクションの環境でタイプの異なるアプリケーションや新旧アプリケーション両方を運用し、それぞれのユーザーの反応をみてリリース戦略に役立て流ことができます。また、Test in production  では安定しているとは言えない新しい機能を小規模なユーザーで試し、次第に展開の%を上げていくことにより、リスクの少ないリリースを実現することができます。
+App Service はセッションスティッキーなので、新しいブラウザやシークレットブラウザを起動して prod の URL のままで２つの異なるサイトに分散されているかを確認します。
 ![](./Screenshots/73.png)
+
+1. スロットスワップ
+また、URL をそのままにして、staging の内容を prod の内容と入れ替える方法として　スロットスワップ の機能が用意されています。
+スワップの画面からソースとターゲットを決めて入れ替えます。
 ![](./Screenshots/74.png)
 ![](./Screenshots/75.png)
+
+2. App Service 認証
+App Service には　GUI の簡単な操作でデプロイされているアプリケーションを AAD で保護する機能が用意されています。
 ![](./Screenshots/76.png)
 ![](./Screenshots/77.png)
+
+1. 設定を保存したら AAD のクレデンシャル情報がない シークレットブラウザで、App Service のアプリケーションの URL を開きます。
+App Service はログインできなくなります。　
 ![](./Screenshots/78.png)
 ![](./Screenshots/79.png)
