@@ -1,5 +1,5 @@
 # Microsoft Azure DevOps Handson
-Updated: 2020/02/04
+Updated: 2020/02/05
 
 ---
 このハンズオンでは、Azure DevOps と Azure Web App を使い、Microsoft が提供している DevOps プロセスを一貫して体験いただきます。
@@ -17,7 +17,10 @@ Updated: 2020/02/04
 
 
 ## 概要
-# TBD
+
+お客様に高い価値を提供するためには、新しいテクノロジーやエンドユーザーのフィードバックを迅速にサービスに反映し続け、 それと同時に、サービス品質を高水準に保ち続ける必要があります。そのためには開発からデリバリまでのプロセスを自動化し 継続的に価値が提供できる環境を作らなくてはなりません。 このハンズオンでは Azure における 開発からリリースまでのプロセス最適化をご体験いただけます。
+
+![](./Screenshots/d1.png)
 
 ---
 
@@ -37,6 +40,9 @@ https://dev.azure.com/
 ---
 
 ## 2. Azure Web App を Azure にプロビジョ二ング
+
+この章では　Azure App Service をまずデプロイします。
+![](./Screenshots/d1-2.png)
 
 ### 手順
 
@@ -72,8 +78,7 @@ Application Insights とは開発者や DevOps プロフェッショナル向け
 1. Web App の初期画面 が表示されたことを確認します。
 ![](./Screenshots/1-16.png)
 
-### この章で作ったもの
-# TBD
+
 
 ### 備考/参考URL
 - App Service / Web App とは？
@@ -92,6 +97,9 @@ Application Insights とは開発者や DevOps プロフェッショナル向け
 ---
 
 ## 3. Azure DevOps のプロジェクトを作成
+
+この章では　Azure DevOps のアカウントを作成し、ハコとなるプロジェクトを作ります。
+![](./Screenshots/d2-2.png)
 
 1. Azure DevOps のページにログインします (https://dev.azure.com)
 ![](./Screenshots/1.png)
@@ -119,6 +127,8 @@ Application Insights とは開発者や DevOps プロフェッショナル向け
 
 ---
 ## 4. Azure Pipelines にビルドパイプラインを作成
+この章では　Azure Repos にソースコードを追加し、最初のパイプラインを作っていきます。
+![](./Screenshots/d3-2.png)
 今回は ASP.NET で作られた 仮のショッピングサイトのアプリケーションを Azure DevOps でデプロイします。
 
 1. 下準備として、Azure DevOps の Azure Repos にアプリケーションのソースコードをストアします。GitHub のページから ```git clone``` して Azure Repos にプッシュする方法でもいいですが、既存のリポジトリをインポートする方法があります。今回は GitHub に公開されているリポジトリをインポートするところから始めます。
@@ -174,8 +184,14 @@ Collect advanced diagnostic in case of catastrophic failures のチェックを�
 1. (Optional) ビルドの次に Bash のタスクを定義した結果もこの画面から確認することができます。
 ![](./Screenshots/32.png)
 
+### 備考/参考URL
+- App Pipelines とは？
+  https://azure.microsoft.com/ja-jp/services/devops/pipelines/
+
 ---
 ## 5. Azure Pipelines にリリースパイプラインを追加し、基本的な CI/CD を実現する
+この章では　Azure Pipelies にリリースパイプラインを作り、App Service につなげます。
+![](./Screenshots/d4-3.png)
 1. 続いて、リリースパイプラインを構築していきます。
 リリースパイプラインは Pipelines 配下の Releases から設定します。New pipeline でパイプラインを新規作成します。
 ![](./Screenshots/28.png)
@@ -228,8 +244,11 @@ Continuous deployment trigger を enabled にし、ビルドが終わり、成�
 
 
 
+
 ---
 ## 6. Azure Pipelines のリリースパイプラインに Staging 環境へのデプロイプロセスを追加
+この章では　Azure Pipelies に Staging 用のリリースパイプラインを作り、App Service の Staging 環境につなげます。
+![](./Screenshots/6-2.png)
 
 1. これまでのプロセスで一番基本的な CI/CD のパイプラインが作成されました。次はそれをもう少し高度なものにしていきます。
 この章では 該当アプリケーションがまず Staging 環境にデプロイされ、内部ユーザーが挙動を確認したのち、承認プロセスを経てプロダクション環境にデプロイされるような設定をします。
@@ -283,6 +302,9 @@ Pre-deployment approval のトグルをオンにし、 Approvers にユーザー
 ---
 ## 7. Azure Repository からコードを変更し、コミットをトリガーに CI/CD が走り出すことを確認
 これで、全ての処理が完了しました。それでは全体の CI/CD パイプラインが正しく動くか確認します。　
+
+![](./Screenshots/d1.png)
+
 
 1. Build パイプラインを起動するため、Azure Repos の簡易エディタを使い、ファイルに変更を加え変更をコミットします。
 ![](./Screenshots/64.png)
